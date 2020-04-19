@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 14:53:09 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/02/27 16:45:34 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:58:26 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,6 @@ void	init_scene(t_scene **s)
 	(*s)->tex_end = 0;
 	(*s)->zbuf = NULL;
 	(*s)->spr_nb = 0;
-	(*s)->save = 0;
 	if (!((*s)->sp = malloc(sizeof(t_sp *) * 50)))
 		exit_err_1(-12);
 	ft_bzero((*s)->sp, sizeof(t_sp *) * 50);

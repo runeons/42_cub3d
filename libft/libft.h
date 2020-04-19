@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:25:12 by tsantoni          #+#    #+#             */
-/*   Updated: 2019/11/18 08:30:52 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:42:25 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int	ft_strcmp(char *s1, char *s2);
 size_t				ft_strlen(const char *s);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:22:14 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 16:24:03 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:53:51 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	dispatch_parsing(t_scene *s, char *line, int *i, int fd)
 		parse_texture(s, line, i, 's');
 	else if (line[*i] == '1' || line[*i] == '0')
 		fill_list(s, clean_line(line, s));
-//		parse_list(s, line, fd);
 	else if (*i != (int)ft_strlen(line))
 		exit_err(s, -11);
 }
@@ -105,7 +104,7 @@ void	parsing(t_scene *s, int fd)
 		dispatch_parsing(s, line, i, fd);
 		free(line);
 	}
-	free(i);// MODIF
+	free(i);
 	if (gnl == 0)
 		free(line);
 	if (gnl == -1)
@@ -113,4 +112,9 @@ void	parsing(t_scene *s, int fd)
 	check_elements(s);
 	if (!(s->zbuf = malloc(sizeof(double) * s->mlx->win->x)))
 		exit_err(s, -12);
+	fill_map(s);
+	init_pos_on_map(s);
+	copy_map(s);
+	if (check_map(s, s->pos->x + 0.5, s->pos->y + 0.5) == 0)
+		exit_err_1(-17);
 }

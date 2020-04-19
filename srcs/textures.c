@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:07:12 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:34:00 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 15:01:12 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	init_textures_ptr(t_scene *s)
 	if (!(s->tex_spr->ptr = mlx_xpm_file_to_image(s->mlx->ptr,
 					s->tex_spr->file, &s->tex_spr->w, &s->tex_spr->h)))
 		exit_err_1(-14);
+	get_textures_add(s);
 }
 
 char	*ft_substr_word(char *line, unsigned int start, size_t len)

@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 14:33:39 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/02/27 16:23:40 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:40:16 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,6 @@ unsigned int	convert_color(int r, int g, int b)
 
 	res = b | g << 8 | r << 16 | 0x00 << 24;
 	return (res);
-}
-
-int				ft_strcmp(char *s1, char *s2)
-{
-	int i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
-	return (s1[i] - s2[i]);
 }
 
 int				ft_atoi_ptr(char const *s, int *i)

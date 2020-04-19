@@ -189,7 +189,6 @@ typedef struct	s_scene{
 	t_sp_inf	*sp_inf;
 	int			*spr_order;
 	
-	int	save;
 	t_bmp	*bmp;
 
 	t_key	*key_buf;
@@ -308,3 +307,7 @@ void	init_bmp(t_scene *s);
 void	write_pixel_data(t_scene *s);
 int	write_header(t_scene *s);
 void	save_bmp(t_scene *s);
+
+void	copy_map_row(t_scene *s, int i, int j);
+void	copy_map(t_scene *s);
+int	check_map(t_scene *s, int x, int y);
