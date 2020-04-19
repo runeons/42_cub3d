@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:03:38 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 16:51:02 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:28:04 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int		check_map(t_scene *s, int x, int y)
 
 	check = 0;
 	map = s->map->cpy;
+	//printf("check [%i][%i] = %c\n", y, x, map[y][x]);
 	if (map[y][x] == '1' || map[y][x] == '3' || map[y][x] == '4')
 		return (1);
 	if (x == 0 || y == 0 || y == s->map->h + 2)
@@ -147,10 +148,10 @@ int		main(int ac, char **av)
 	print_map(s);
 	printf("\n");
 	copy_map(s);
-	//print_cpy2(s);
+	print_cpy(s);
 	check = -1;
-	check = check_map(s, s->pos->y, s->pos->x);
-	printf("check : %i\n", check);
+	if (check_map(s, s->pos->x + 0.5, s->pos->y + 0.5) == 0)
+		exit_err_1(-17);
 	init_textures_ptr(s);
 	get_textures_add(s);
 	if (s->save == 1)

@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:37:27 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:34:46 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 14:28:25 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	exit_err_1(int err_nb)
 		write(STDERR_FILENO, "Error: max sprites 50\n", 20);
 	else if (err_nb == -16)
 		write(STDERR_FILENO, "Error: map character\n", 20);
+	else if (err_nb == -17)
+		write(STDERR_FILENO, "Error: map not closed\n", 22);
 	exit(EXIT_FAILURE);
 }
 
