@@ -1,113 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   struct_1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/26 14:53:09 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 14:58:26 by tsantoni         ###   ########.fr       */
+/*   Created: 2020/04/19 15:04:53 by tsantoni          #+#    #+#             */
+/*   Updated: 2020/04/19 15:05:06 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	create_map(t_map **map)
-{
-	if (!(*map = malloc(sizeof(t_map))))
-		exit_err_1(-12);
-	(*map)->tab = NULL;
-	(*map)->cpy = NULL;
-	(*map)->w = 0;
-	(*map)->h = 0;
-}
-
-void	create_rgb(t_rgb **rgb)
-{
-	if (!(*rgb = malloc(sizeof(t_rgb))))
-		exit_err_1(-12);
-	(*rgb)->r = 0;
-	(*rgb)->g = 0;
-	(*rgb)->b = 0;
-}
-
-void	create_col(t_col **col)
-{
-	if (!(*col = malloc(sizeof(t_col))))
-		exit_err_1(-12);
-	(*col)->f = 0;
-	(*col)->c = 0;
-	(*col)->w = 0;
-	(*col)->spr = 0;
-}
-
-void	create_win(t_win **win)
-{
-	if (!(*win = malloc(sizeof(t_win))))
-		exit_err_1(-12);
-	(*win)->ptr = NULL;
-	(*win)->x = 0;
-	(*win)->y = 0;
-}
-
-void	create_img(t_img **img)
-{
-	if (!(*img = malloc(sizeof(t_img))))
-		exit_err_1(-12);
-	(*img)->ptr = NULL;
-	(*img)->add = NULL;
-}
-
-void	create_mlx(t_mlx **mlx)
-{
-	if (!(*mlx = malloc(sizeof(t_mlx))))
-		exit_err_1(-12);
-	(*mlx)->ptr = NULL;
-	create_win(&((*mlx)->win));
-	create_img(&((*mlx)->img));
-}
-
-void	create_vec(t_vec **vec)
-{
-	if (!(*vec = malloc(sizeof(t_vec))))
-		exit_err_1(-12);
-	(*vec)->x = 0;
-	(*vec)->y = 0;
-}
-
-void	create_tmp(t_tmp **p)
-{
-	if (!(*p = malloc(sizeof(t_tmp))))
-		exit_err_1(-12);
-	(*p)->lst = NULL;
-	(*p)->prev_x = -1;
-	(*p)->clean_w = 0;
-	(*p)->i = 0;
-	(*p)->j = 0;
-}
-
-void	create_key(t_key **key_buf)
-{
-	if (!(*key_buf = malloc(sizeof(t_key))))
-		exit_err_1(-12);
-	(*key_buf)->left = 0;
-	(*key_buf)->right = 0;
-	(*key_buf)->up = 0;
-	(*key_buf)->down = 0;
-}
-
-void	create_tex(t_tex **tex)
-{
-	if (!(*tex = malloc(sizeof(t_tex))))
-		exit_err_1(-12);
-	(*tex)->ptr = NULL;
-	(*tex)->add = NULL;
-	(*tex)->file = NULL;
-	(*tex)->w = 0;
-	(*tex)->h = 0;
-	(*tex)->x = 0;
-	(*tex)->y = 0;
-}
 
 void	create_sp(t_sp **sp)
 {

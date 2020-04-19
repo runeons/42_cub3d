@@ -208,6 +208,7 @@ void	create_key(t_key **key_buf);
 void	create_tex(t_tex **tex);
 void	create_sp(t_sp **sp);
 void	create_sp_inf(t_sp_inf **sp_inf);
+void	create_bmp(t_bmp **bmp);
 void	init_scene(t_scene **s);
 void	create_scene(t_scene **s);
 

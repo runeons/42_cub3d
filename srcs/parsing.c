@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:22:14 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 14:53:51 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/19 15:17:12 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ void	parse_res(t_scene *s, char *line, int *i)
 	skip_space(line, i);
 	if (*i != (int)ft_strlen(line))
 		exit_err(s, -8);
-	//mlx_get_screen_size(s->mlx->ptr, &x, &y);
-	//ft_max(&s->mlx->win->y, y);
+//	mlx_get_screen_size(s->mlx->ptr, &x, &y);
 	x = 1366;
 	y = 663;
 	ft_max(&s->mlx->win->x, x);
+	ft_max(&s->mlx->win->y, y);
+	printf("rx : %i, ry : %i\n", s->mlx->win->x, s->mlx->win->y);
 	increment_elmts(s, 'R');
 }
 
