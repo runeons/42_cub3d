@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 14:37:43 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:35:22 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:57:54 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		key_press(int key, t_scene *s)
 		free(s->tex_spr->file);
 		mlx_destroy_image(s->mlx->ptr, s->mlx->img->ptr);
 		mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
-//		while (1);
 		exit(EXIT_SUCCESS);
 	}
 	if (key == KEYL || key == LEFT)

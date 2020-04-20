@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:37:15 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 14:23:29 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:57:03 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	print_cpy(t_scene *s)
 	while (s->map->cpy[i])
 	{
 		if (s->map->cpy[i][0] == '\0')
-			break;
-		else 
+			break ;
+		else
 			print_one_tab(s->map->cpy[i]);
 		i++;
 	}
@@ -97,4 +97,4 @@ void	print_cpy2(t_scene *s)
 		}
 		i++;
 	}
-}	
+}

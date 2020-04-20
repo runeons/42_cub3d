@@ -6,13 +6,13 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 14:51:27 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:33:29 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:46:00 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void		swap_sprites(t_scene *s, int n1, int n2)
+void	swap_sprites(t_scene *s, int n1, int n2)
 {
 	t_sp	*tmp;
 
@@ -32,7 +32,7 @@ void		swap_sprites(t_scene *s, int n1, int n2)
 	free(tmp);
 }
 
-void		order_sprites(t_scene *s)
+void	order_sprites(t_scene *s)
 {
 	int	i;
 	int	j;
@@ -96,26 +96,6 @@ void	cast_sprite(t_scene *s)
 	s->sp_inf->move_screen = (int)(MOVE_SPRITE / s->sp_inf->trans->y);
 }
 
-void	init_sp_inf(t_scene *s, int n)
-{
-	s->sp_inf->curr->x = s->sp[n]->x;
-	s->sp_inf->curr->y = s->sp[n]->y;
-	s->sp_inf->curr->dist = s->sp[n]->dist;
-	s->sp_inf->curr->img_add = s->mlx->img->add;
-	s->sp_inf->x = 0;
-	s->sp_inf->y = 0;
-	s->sp_inf->inv = 0;
-	s->sp_inf->trans->x = 0;
-	s->sp_inf->trans->y = 0;
-	s->sp_inf->screen = 0;
-	s->sp_inf->line_w = 0;
-	s->sp_inf->line_h = 0;
-	s->sp_inf->start->x = 0;
-	s->sp_inf->start->y = 0;
-	s->sp_inf->end->x = 0;
-	s->sp_inf->end->y = 0;
-}
-
 void	overwrite_sprite_pixel(t_scene *s, int x)
 {
 	int	y;
@@ -123,9 +103,8 @@ void	overwrite_sprite_pixel(t_scene *s, int x)
 
 	d = 0;
 	y = 0;
-	s->tex_spr->x = (int)(256 * (x - (-s->sp_inf->line_w / 2 +
-					s->sp_inf->screen)) * s->tex_spr->w / s->sp_inf->line_w) /
-					256;
+	s->tex_spr->x = (int)((x - (-s->sp_inf->line_w / 2 + s->sp_inf->screen)) *
+		256 * s->tex_spr->w / s->sp_inf->line_w) / 256;
 	if (s->sp_inf->trans->y > 0 && x > 0 && x <
 			s->mlx->win->x && s->sp_inf->trans->y < s->zbuf[x])
 	{
@@ -135,30 +114,13 @@ void	overwrite_sprite_pixel(t_scene *s, int x)
 			d = (y - s->sp_inf->move_screen) * 256 - s->mlx->win->y *
 				128 + s->sp_inf->line_h * 128;
 			s->tex_spr->y = ((d * s->tex_spr->h) / s->sp_inf->line_h) / 256;
+			if (s->tex_spr->y == -1)
+				s->tex_spr->y = 0;
 			s->col->spr = ((unsigned int *)s->tex_spr->add)[s->tex_spr->x +
 				s->tex_spr->y * s->tex_spr->w];
 			if (s->col->spr != 0)
 				s->mlx->img->add[x + y * s->mlx->win->x] = s->col->spr;
 			y++;
 		}
-	}
-}
-
-void	manage_sprites(t_scene *s)
-{
-	int		n;
-	int		stripe;
-
-	n = 0;
-	order_sprites(s);
-	while (n < s->spr_nb)
-	{
-		init_sp_inf(s, n);
-		cast_sprite(s);
-		locate_sprite_start_and_end(s);
-		stripe = s->sp_inf->start->x;
-		while (stripe < s->sp_inf->end->x)
-			overwrite_sprite_pixel(s, stripe++);
-		n++;
 	}
 }

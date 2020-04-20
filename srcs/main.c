@@ -6,12 +6,31 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:03:38 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 15:01:20 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:44:48 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <errno.h>
+
+void	manage_sprites(t_scene *s)
+{
+	int		n;
+	int		stripe;
+
+	n = 0;
+	order_sprites(s);
+	while (n < s->spr_nb)
+	{
+		init_sp_inf(s, n);
+		cast_sprite(s);
+		locate_sprite_start_and_end(s);
+		stripe = s->sp_inf->start->x;
+		while (stripe < s->sp_inf->end->x)
+			overwrite_sprite_pixel(s, stripe++);
+		n++;
+	}
+}
 
 void	draw_world(t_scene *s)
 {
@@ -65,11 +84,11 @@ int		main(int ac, char **av)
 	if (av[2] && ft_strcmp(av[2], "--save") != 0)
 		exit_err_1(-1);
 	create_scene(&s);
-	parsing(s, open(av[1], O_RDONLY));
 	if (!(s->mlx->ptr = mlx_init()))
 		exit_err(s, -13);
+	parsing(s, open(av[1], O_RDONLY));
 	if (!(s->mlx->win->ptr = mlx_new_window(s->mlx->ptr, s->mlx->win->x,
-			s->mlx->win->y, "WELCOME")))
+			s->mlx->win->y, "CUB3D")))
 		exit_err(s, -13);
 	init_textures_ptr(s);
 	if (av[2])

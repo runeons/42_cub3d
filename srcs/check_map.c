@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 14:56:11 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 14:56:23 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:56:05 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void	copy_map(t_scene *s)
 	s->map->cpy[i] = "\0";
 }
 
-int	check_map(t_scene *s, int x, int y)
+int		check_map(t_scene *s, int x, int y)
 {
-	int	check;
 	char	**map;
+	int		check;
 
-	check = 0;
 	map = s->map->cpy;
+	check = 0;
 	if (map[y][x] == '1' || map[y][x] == '3' || map[y][x] == '4')
 		return (1);
 	if (x == 0 || y == 0 || y == s->map->h + 2)

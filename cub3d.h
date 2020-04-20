@@ -237,6 +237,7 @@ int		key_release(int key, t_scene *s);
 int		key_dispatch(t_scene *s);
 
 // main.c
+void	manage_sprites(t_scene *s);
 void	draw_img(t_scene *s);
 void	draw_world(t_scene *s);
 
@@ -253,14 +254,15 @@ void	init_textures_ptr(t_scene *s);
 int		get_check_tex(char **file, char *line, int *i);
 int		parse_texture(t_scene *s, char *line, int *i, char c);
 
-// sprites.c
+// sprites.c //
 void		swap_sprites(t_scene *s, int n1, int n2);
 void		order_sprites(t_scene *s);
 void		cast_sprite(t_scene *s);
 void		locate_sprite_start_and_end(t_scene *s);
 void		overwrite_sprite_pixel(t_scene *s, int x);
+
+// sprites_init.c //
 void		init_sp_inf(t_scene *s, int n);
-void		manage_sprites(t_scene *s);
 
 // tools.c
 void			ft_max(int *nb, int max);

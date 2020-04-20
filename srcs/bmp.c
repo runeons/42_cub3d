@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 10:29:02 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:30:09 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 13:54:18 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	write_pixel_data(t_scene *s)
 	}
 }
 
-int	write_header(t_scene *s)
+int		write_header(t_scene *s)
 {
 	int	ret;
 
