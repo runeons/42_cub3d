@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 11:40:48 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:31:47 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:15:39 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	check_map_char(t_scene *s, char c)
 	else if (c == '2')
 	{
 		if (s->spr_nb > 50)
-			exit_err(s, -15);
+			exit_err_1(-15);
 		create_sp(&s->sp[s->spr_nb]);
 		s->spr_nb++;
 	}
 	else if (c != '0' && c != '1' && ft_is_space(c) == 0)
-		exit_err(s, -16);
+		exit_err_1(-16);
 }
 
 int		get_clean_width(char *line)
@@ -53,7 +53,7 @@ char	*clean_line(char *line, t_scene *s)
 	j = 0;
 	check = 0;
 	if (!(cleaned = malloc(sizeof(char) * get_clean_width(line) + 1)))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	while (line[i])
 	{
 		skip_space(line, &i);
@@ -86,6 +86,6 @@ int		parse_list(t_scene *s, char *line, int fd)
 	if (gnl == 0)
 		free(line);
 	if (gnl == -1)
-		exit_err(s, 2);
+		exit_err_1(2);
 	return (OK);
 }

@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 14:13:39 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/18 10:32:11 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:22:44 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	init_sprite(t_scene *s, int i, int j)
 			s->sp[s->spr_nb]->x) + (s->pos->y - s->sp[s->spr_nb]->y) *
 		(s->pos->y - s->sp[s->spr_nb]->y);
 	s->sp[s->spr_nb]->img_add = s->mlx->img->add;
-	printf("pos : %f|%f - spr_nb : %i\n", s->sp[s->spr_nb]->x,
-			s->sp[s->spr_nb]->y, s->spr_nb);
 	s->spr_nb++;
 }
 
@@ -45,8 +43,6 @@ void	init_player(t_scene *s, int i, int j)
 		s->pln->x = 0;
 		s->pln->y = s->dir->x * 0.66;
 	}
-	printf("pos : %.1f - %.1f | dir : %.1f - %.1f | pln : %.2f - %.2f\n",
-			s->pos->x, s->pos->y, s->dir->x, s->dir->y, s->pln->x, s->pln->y);
 }
 
 void	init_pos_on_map(t_scene *s)
@@ -93,7 +89,7 @@ void	get_map_size(t_scene *s)
 		if (s->p->prev_x == -1)
 			s->p->prev_x = len;
 		else if (s->p->prev_x != len)
-			exit_err(s, -3);
+			exit_err_1(-3);
 		s->map->w = len;
 		s->p->lst = s->p->lst->next;
 	}
@@ -109,7 +105,7 @@ int		fill_map(t_scene *s)
 	tmp = s->p->lst;
 	get_map_size(s);
 	if (!(s->map->tab = malloc(sizeof(char *) * (s->map->h + 1))))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	ft_bzero(s->map->tab, sizeof(char *) * (s->map->h + 1));
 	while (s->p->lst->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:22:14 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 13:38:19 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:19:53 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parse_color(t_scene *s, char *line, int *i, char c)
 	(*i)++;
 	skip_space(line, i);
 	if (!line[*i])
-		exit_err(s, -9);
+		exit_err_1(-9);
 	skip_space_char(line, i, '(');
 	s->rgb->r = ft_atoi_ptr(line, i);
 	skip_space_char(line, i, ',');
@@ -30,7 +30,7 @@ void	parse_color(t_scene *s, char *line, int *i, char c)
 	if (*i != (int)ft_strlen(line) || check_range(s->rgb->r, 0, 255) == 0 ||
 			check_range(s->rgb->g, 0, 255) == 0 ||
 			check_range(s->rgb->b, 0, 255) == 0)
-		exit_err(s, -9);
+		exit_err_1(-9);
 	if (c == 'C')
 		s->col->c = convert_color(s->rgb->r, s->rgb->g, s->rgb->b);
 	if (c == 'F')
@@ -49,13 +49,13 @@ void	parse_res(t_scene *s, char *line, int *i)
 	(*i)++;
 	skip_space(line, i);
 	if (!line[*i])
-		exit_err(s, -8);
+		exit_err_1(-8);
 	s->mlx->win->x = ft_atoi_ptr(line, i);
 	skip_space(line, i);
 	s->mlx->win->y = ft_atoi_ptr(line, i);
 	skip_space(line, i);
 	if (*i != (int)ft_strlen(line))
-		exit_err(s, -8);
+		exit_err_1(-8);
 	mlx_get_screen_size(s->mlx->ptr, &x, &y);
 	ft_max(&s->mlx->win->x, x);
 	ft_max(&s->mlx->win->y, y);
@@ -86,7 +86,7 @@ void	dispatch_parsing(t_scene *s, char *line, int *i, int fd)
 	else if (line[*i] == '1' || line[*i] == '0')
 		fill_list(s, clean_line(line, s));
 	else if (*i != (int)ft_strlen(line))
-		exit_err(s, -11);
+		exit_err_1(-18);
 }
 
 void	parsing(t_scene *s, int fd)
@@ -96,7 +96,7 @@ void	parsing(t_scene *s, int fd)
 	int		*i;
 
 	if (!(i = malloc(sizeof(int))))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	while ((gnl = get_next_line(fd, &line)) > 0)
 	{
 		dispatch_parsing(s, line, i, fd);
@@ -106,10 +106,10 @@ void	parsing(t_scene *s, int fd)
 	if (gnl == 0)
 		free(line);
 	if (gnl == -1)
-		exit_err(s, 2);
+		exit_err_1(2);
 	check_elements(s);
 	if (!(s->zbuf = malloc(sizeof(double) * s->mlx->win->x)))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	fill_map(s);
 	init_pos_on_map(s);
 	copy_map(s);

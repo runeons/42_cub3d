@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 14:56:11 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 13:56:05 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:10:54 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	copy_map_row(t_scene *s, int i, int j)
 	cpy_w = s->map->w + 1;
 	cpy_h = s->map->h + 2;
 	if (!(s->map->cpy[i] = malloc(sizeof(char) * (cpy_w + 1))))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	while (j < cpy_w)
 	{
 		if (j == 0 || i == 0 || i == cpy_h - 1)
@@ -42,7 +42,7 @@ void	copy_map(t_scene *s)
 	j = 0;
 	cpy_h = s->map->h + 2;
 	if (!(s->map->cpy = malloc(sizeof(char *) * (cpy_h + 1))))
-		exit_err(s, -12);
+		exit_err_1(-12);
 	ft_bzero(s->map->cpy, sizeof(char *) * cpy_h);
 	while (i < cpy_h)
 	{

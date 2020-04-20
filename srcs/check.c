@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:20:51 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/02/27 16:44:30 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:09:38 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void	check_elements(t_scene *s)
 	while (j < 8)
 	{
 		if (s->elmts[j] != 1)
-			exit_err(s, -11);
+			exit_err_1(-11);
 		j++;
 	}
 	if (s->elmts[8] != 1)
-		exit_err(s, -5);
+		exit_err_1(-5);
 }
 
 void	increment_elmts(t_scene *s, char c)

@@ -6,11 +6,24 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 14:37:43 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 13:57:54 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/20 14:45:55 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int		destroy_notify(t_scene *s)
+{
+	free(s->tex_n->file);
+	free(s->tex_s->file);
+	free(s->tex_w->file);
+	free(s->tex_e->file);
+	free(s->tex_spr->file);
+	mlx_destroy_image(s->mlx->ptr, s->mlx->img->ptr);
+	mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
+	exit(EXIT_SUCCESS);
+	return (OK);
+}
 
 int		key_press(int key, t_scene *s)
 {

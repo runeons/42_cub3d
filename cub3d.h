@@ -314,3 +314,5 @@ void	save_bmp(t_scene *s);
 void	copy_map_row(t_scene *s, int i, int j);
 void	copy_map(t_scene *s);
 int	check_map(t_scene *s, int x, int y);
+
+int	destroy_notify(t_scene *s);
