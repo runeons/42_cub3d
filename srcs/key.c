@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 14:37:43 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 14:45:55 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 17:30:50 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,26 @@ int		key_press(int key, t_scene *s)
 		mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
 		exit(EXIT_SUCCESS);
 	}
-	if (key == KEYL || key == LEFT)
+	if (key == KEY_Q || key == KEY_A || key == KEY_LEFT)
 		s->key_buf->left = 1;
-	if (key == KEYR || key == RIGHT)
+	if (key == KEY_D || key == KEY_RIGHT)
 		s->key_buf->right = 1;
-	if (key == KEYU || key == UP)
+	if (key == KEY_Z || key == KEY_W || key == KEY_UP)
 		s->key_buf->up = 1;
-	if (key == KEYD || key == DOWN)
+	if (key == KEY_S || key == KEY_DOWN)
 		s->key_buf->down = 1;
 	return (OK);
 }
 
 int		key_release(int key, t_scene *s)
 {
-	if (key == KEYL || key == LEFT)
+	if (key == KEY_Q || key == KEY_A || key == KEY_LEFT)
 		s->key_buf->left = 0;
-	if (key == KEYR || key == RIGHT)
+	if (key == KEY_D || key == KEY_RIGHT)
 		s->key_buf->right = 0;
-	if (key == KEYU || key == UP)
+	if (key == KEY_Z || key == KEY_W || key == KEY_UP)
 		s->key_buf->up = 0;
-	if (key == KEYD || key == DOWN)
+	if (key == KEY_S || key == KEY_DOWN)
 		s->key_buf->down = 0;
 	return (OK);
 }

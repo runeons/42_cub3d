@@ -9,16 +9,18 @@
 #define OK 1
 #define ERROR 0 
 
-# define UP 122
-# define LEFT 113
-# define DOWN 115
-# define RIGHT 100
+# define KEY_Z 122
+# define KEY_Q 113
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_W 119
+# define KEY_A 97
 # define ESC 65307
 
-# define KEYU 65362
-# define KEYL 65361
-# define KEYD 65364
-# define KEYR 65363
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
 
 #ifndef MOVE_SPEED
 # define MOVE_SPEED 0.22
