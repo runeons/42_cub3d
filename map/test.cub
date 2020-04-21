@@ -1,11 +1,11 @@
-  NO ./xpm/bluestone.xpm
-  SO ./xpm/purplestone.xpm
-  WE ./xpm/wood.xpm
- EA ./xpm/redbrick.xpm
+  NO ./xpm/brick4.xpm
+  SO ./xpm/brick3.xpm
+  WE ./xpm/brick2.xpm
+ EA ./xpm/brick1.xpm
     R     600     300
    S    ./xpm/tonneau.xpm
-C 255, 100, 10
-F 255, 0, 255
+C 32, 60, 43
+F 67, 54, 86
 
 11111111110001
 10110100011110
