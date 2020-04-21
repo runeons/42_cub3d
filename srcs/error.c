@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:37:27 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 14:30:15 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 09:48:18 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void	exit_err_1(int err_nb)
 	else if (err_nb == -4)
 		write(STDERR_FILENO, "2 Error: open bmp file\n", 17);
 	else if (err_nb == -5)
-		write(STDERR_FILENO, "5 Error: starting position\n", 25);
+		write(STDERR_FILENO, "Error: player starting position\n", 32);
 	else if (err_nb == -6)
 		write(STDERR_FILENO, "2 Error: write bmp pixel data\n", 25);
 	else if (err_nb == -7)
 		write(STDERR_FILENO, "Error: map file name\n", 21);
 	else if (err_nb == -8)
-		write(STDERR_FILENO, "8 Error: resolution\n", 20);
+		write(STDERR_FILENO, "Error: resolution\n", 18);
 	else if (err_nb == -9)
-		write(STDERR_FILENO, "9 Error: floor/ceiling\n", 17);
+		write(STDERR_FILENO, "Error: floor/ceiling\n", 21);
 	else if (err_nb == -10)
-		write(STDERR_FILENO, "0 Error: texture\n", 20);
+		write(STDERR_FILENO, "Error: textures\n", 16);
 	else if (err_nb == -11)
 		write(STDERR_FILENO, "Error: elements number\n", 24);
 	else if (err_nb == -12)
@@ -47,7 +47,7 @@ void	exit_err_1(int err_nb)
 	else if (err_nb == -15)
 		write(STDERR_FILENO, "Error: max sprites 50\n", 20);
 	else if (err_nb == -16)
-		write(STDERR_FILENO, "Error: map character\n", 20);
+		write(STDERR_FILENO, "Error: unknown character on map\n", 32);
 	else if (err_nb == -17)
 		write(STDERR_FILENO, "Error: map not closed\n", 22);
 	else if (err_nb == -18)

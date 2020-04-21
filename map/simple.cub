@@ -1,0 +1,13 @@
+R 300 200
+NO ./xpm/bluestone.xpm
+SO ./xpm/purplestone.xpm
+WE ./xpm/wood.xpm
+EA ./xpm/redbrick.xpm
+S ./xpm/tonneau.xpm
+C (0, 0, 0)
+F (255, 255, 255)
+111111
+100101
+102001
+1100N1
+111111

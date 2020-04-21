@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:16:15 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/02/27 14:33:52 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 09:28:23 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void			ft_max(int *nb, int max)
 {
 	if (*nb > max)
 		*nb = max;
+}
+
+void			ft_min(int *nb, int min)
+{
+	if (*nb < min)
+		*nb = min;
 }
 
 int				ft_is_digit(char c)

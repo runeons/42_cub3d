@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:22:14 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 14:19:53 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 09:57:53 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ void	parse_color(t_scene *s, char *line, int *i, char c)
 	skip_space(line, i);
 	if (!line[*i])
 		exit_err_1(-9);
-	skip_space_char(line, i, '(');
 	s->rgb->r = ft_atoi_ptr(line, i);
 	skip_space_char(line, i, ',');
 	s->rgb->g = ft_atoi_ptr(line, i);
 	skip_space_char(line, i, ',');
 	s->rgb->b = ft_atoi_ptr(line, i);
-	skip_space_char(line, i, ')');
 	skip_space(line, i);
 	if (*i != (int)ft_strlen(line) || check_range(s->rgb->r, 0, 255) == 0 ||
 			check_range(s->rgb->g, 0, 255) == 0 ||
@@ -59,6 +57,8 @@ void	parse_res(t_scene *s, char *line, int *i)
 	mlx_get_screen_size(s->mlx->ptr, &x, &y);
 	ft_max(&s->mlx->win->x, x);
 	ft_max(&s->mlx->win->y, y);
+	ft_min(&s->mlx->win->x, 25);
+	ft_min(&s->mlx->win->y, 25);
 	increment_elmts(s, 'R');
 }
 

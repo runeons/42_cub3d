@@ -266,6 +266,7 @@ void		init_sp_inf(t_scene *s, int n);
 
 // tools.c
 void			ft_max(int *nb, int max);
+void			ft_min(int *nb, int min);
 int				ft_is_digit(char c);
 int				ft_is_space(char c);
 void			skip_space(char *line, int *i);
