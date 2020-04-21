@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 09:22:14 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/21 10:36:27 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 18:08:02 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,33 +98,6 @@ void	dispatch_parsing(t_scene *s, char *line, int *i)
 	}
 }
 
-/*
-void	dispatch_parsing(t_scene *s, char *line, int *i)
-{
-	*i = 0;
-	skip_space(line, i);
-	if (line[*i] == 'R')
-		parse_res(s, line, i);
-	else if (line[*i] == 'C')
-		parse_color(s, line, i, 'C');
-	else if (line[*i] == 'F')
-		parse_color(s, line, i, 'F');
-	else if (line[*i] == 'N' && line[*i + 1] == 'O')
-		parse_texture(s, line, i, 'N');
-	else if (line[*i] == 'S' && line[*i + 1] == 'O')
-		parse_texture(s, line, i, 'S');
-	else if (line[*i] == 'W' && line[*i + 1] == 'E')
-		parse_texture(s, line, i, 'W');
-	else if (line[*i] == 'E' && line[*i + 1] == 'A')
-		parse_texture(s, line, i, 'E');
-	else if (line[*i] == 'S')
-		parse_texture(s, line, i, 's');
-	else if (line[*i] == '1' || line[*i] == '0')
-		fill_list(s, clean_line(line, s));
-	else if (*i != (int)ft_strlen(line))
-		exit_err_1(-18);
-}
-*/
 void	parsing(t_scene *s, int fd)
 {
 	int		gnl;

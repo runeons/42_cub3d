@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:07:09 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 15:10:07 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 17:35:07 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,6 @@ void	create_key(t_key **key_buf)
 	(*key_buf)->right = 0;
 	(*key_buf)->up = 0;
 	(*key_buf)->down = 0;
+	(*key_buf)->rotate_left = 0;
+	(*key_buf)->rotate_right = 0;
 }

@@ -110,6 +110,8 @@ typedef struct	s_key{
 	int	right;
 	int	up;
 	int	down;
+	int	rotate_left;
+	int	rotate_right;
 }				t_key;
 
 typedef struct	s_tex{
@@ -230,6 +232,10 @@ void	exit_err(t_scene *s, int err_nb);
 // move.c
 int		move_forward(t_scene *s);
 int		move_backward(t_scene *s);
+int		move_left(t_scene *s);
+int		move_right(t_scene *s);
+
+// rotate.c
 int		rotate_right(t_scene *s);
 int		rotate_left(t_scene *s);
 
