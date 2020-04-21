@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:37:27 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/21 10:42:33 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 10:50:37 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	exit_err_1(int err_nb)
 	else if (err_nb == -2)
 		write(STDERR_FILENO, "2 Error: saving as bmp\n", 17);
 	else if (err_nb == -3)
-		write(STDERR_FILENO, "3 Error: map size\n", 20);
+		write(STDERR_FILENO, "Error: map size\n", 16);
 	else if (err_nb == -4)
 		write(STDERR_FILENO, "2 Error: open bmp file\n", 17);
 	else if (err_nb == -5)
@@ -55,6 +55,6 @@ void	exit_err_1(int err_nb)
 	else if (err_nb == -19)
 		write(STDERR_FILENO, "Error: map should be at the end\n", 32);
 	else if (err_nb == -20)
-		write(STDERR_FILENO, "Error: map should end the file in one block\n(player position cannot be on the edge)\n", 83);
+		write(STDERR_FILENO, "Error: map\n(should end the file in one block)\n", 46);
 	exit(EXIT_FAILURE);
 }
