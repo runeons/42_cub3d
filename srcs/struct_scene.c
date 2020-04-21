@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_1.c                                         :+:      :+:    :+:   */
+/*   struct_scene.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:04:53 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/19 15:05:06 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 10:28:13 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	init_scene(t_scene **s)
 	create_sp_inf(&((*s)->sp_inf));
 	create_bmp(&((*s)->bmp));
 	create_key(&((*s)->key_buf));
-	if (!((*s)->elmts = malloc(sizeof(int) * 9)))
+	if (!((*s)->elmts = malloc(sizeof(int) * 10)))
 		exit_err_1(-12);
-	ft_bzero((*s)->elmts, sizeof(int) * 9);
+	ft_bzero((*s)->elmts, sizeof(int) * 10);
 }
 
 void	create_scene(t_scene **s)

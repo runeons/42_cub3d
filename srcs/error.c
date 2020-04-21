@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:37:27 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/21 09:48:18 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 10:42:33 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ void	exit_err_1(int err_nb)
 		write(STDERR_FILENO, "Error: map not closed\n", 22);
 	else if (err_nb == -18)
 		write(STDERR_FILENO, "Error: unkown element\n", 22);
+	else if (err_nb == -19)
+		write(STDERR_FILENO, "Error: map should be at the end\n", 32);
+	else if (err_nb == -20)
+		write(STDERR_FILENO, "Error: map should end the file in one block\n(player position cannot be on the edge)\n", 83);
 	exit(EXIT_FAILURE);
 }

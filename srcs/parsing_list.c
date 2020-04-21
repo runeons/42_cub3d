@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 11:40:48 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/20 14:15:39 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/21 10:31:55 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ char	*clean_line(char *line, t_scene *s)
 
 int		fill_list(t_scene *s, char *line)
 {
+	increment_elmts(s, 'm');
+	if (count_elements(s) < 8)
+		exit_err_1(-19);
 	if (s->p->lst == NULL)
 		s->p->lst = ft_lstnew(line);
 	else

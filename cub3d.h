@@ -303,7 +303,7 @@ int		fill_map(t_scene *s);
 // parsing.c
 void	parse_color(t_scene *s, char *line, int *i, char c);
 void	parse_res(t_scene *s, char *line, int *i);
-void	dispatch_parsing(t_scene *s, char *line, int *i, int fd);
+void	dispatch_parsing(t_scene *s, char *line, int *i);
 void	parsing(t_scene *s, int fd);
 
 // bmp.c
@@ -317,3 +317,5 @@ void	copy_map(t_scene *s);
 int	check_map(t_scene *s, int x, int y);
 
 int	destroy_notify(t_scene *s);
+int		count_elements(t_scene *s);
+void	dispatch_non_map(t_scene *s, char *line, int *i);
