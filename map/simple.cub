@@ -1,4 +1,4 @@
-R 300 200
+R 1000 500
 NO ./xpm/bluestone.xpm
 SO ./xpm/purplestone.xpm
 WE ./xpm/wood.xpm

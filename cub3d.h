@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 10:09:43 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/22 10:37:04 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/22 15:57:01 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,6 +214,7 @@ void			copy_map(t_scene *s);
 int				check_map(t_scene *s, int x, int y);
 
 void			exit_err_1(int err_nb);
+void			exit_err_2(int err_nb);
 
 int				destroy_notify(t_scene *s);
 int				key_press(int key, t_scene *s);
