@@ -2,7 +2,7 @@
   SO ./xpm/brick3.xpm
   WE ./xpm/brick2.xpm
  EA ./xpm/brick1.xpm
-    R     700     300
+    R     600     600
    S    ./xpm/barrel.xpm
 C 32, 60, 43
 F 67, 54, 86

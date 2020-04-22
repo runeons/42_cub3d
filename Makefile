@@ -12,7 +12,7 @@ OPTION = -L ./libft -lft -L ./mlx-linux\
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) cub3d.h
 	$(CC) $(CFLAGS) $(SRC) $(OPTION) $(INC) $(LIB) ./libft/libft.a -o $(NAME)
 
 clean:
