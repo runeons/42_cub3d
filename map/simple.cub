@@ -3,9 +3,9 @@ NO ./xpm/bluestone.xpm
 SO ./xpm/purplestone.xpm
 WE ./xpm/wood.xpm
 EA ./xpm/redbrick.xpm
-S ./xpm/tonneau.xpm
-C (0, 0, 0)
-F (255, 255, 255)
+S ./xpm/pillar.xpm
+C 76, 52, 43
+F 34, 65, 45
 111111
 100101
 102001
