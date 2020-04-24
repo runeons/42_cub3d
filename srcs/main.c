@@ -6,7 +6,7 @@
 /*   By: tsantoni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:03:38 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/22 09:40:33 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/24 09:33:50 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,6 @@ void	draw_img(t_scene *s)
 		exit_err_1(-13);
 	draw_world(s);
 	manage_sprites(s);
-//	if (!(mlx_put_image_to_window(s->mlx->ptr, s->mlx->win->ptr,
-//			s->mlx->img->ptr, 0, 0)))
-//		exit_err_1(-13);
 	mlx_put_image_to_window(s->mlx->ptr, s->mlx->win->ptr,
 			s->mlx->img->ptr, 0, 0);
 }

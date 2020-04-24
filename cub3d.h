@@ -6,7 +6,7 @@
 /*   By: tsantoni <tsantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 10:09:43 by tsantoni          #+#    #+#             */
-/*   Updated: 2020/04/22 15:57:01 by tsantoni         ###   ########.fr       */
+/*   Updated: 2020/04/23 17:12:30 by tsantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define KEY_RIGHT 65363
 
 # ifndef MOVE_SPEED
-#  define MOVE_SPEED 0.22
+#  define MOVE_SPEED 0.11
 # endif
 
 # ifndef ROT_SPEED
