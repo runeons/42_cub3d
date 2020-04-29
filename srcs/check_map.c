@@ -66,7 +66,7 @@ int		check_map(t_scene *s, int x, int y)
 		return (0);
 	if (map[y][x] == '\0' || map[y][x] == '8')
 		return (0);
-	if (map[y][x] == '0')
+	if (map[y][x] == '0' || map[y][x] == ' ')
 		map[y][x] = '3';
 	if (map[y][x] == '2')
 		map[y][x] = '4';

@@ -242,7 +242,6 @@ void			check_map_char(t_scene *s, char c);
 int				get_clean_width(char *line);
 char			*clean_line(char *line, t_scene *s);
 int				fill_list(t_scene *s, char *line);
-int				parse_list(t_scene *s, char *line, int fd);
 
 void			init_sprite(t_scene *s, int i, int j);
 void			init_player(t_scene *s, int i, int j);

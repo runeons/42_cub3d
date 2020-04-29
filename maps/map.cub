@@ -1,0 +1,24 @@
+
+	R 		800		 550
+
+
+	
+ 	NO	   ./xpm/brick1.xpm   
+ 	SO	   ./xpm/brick2.xpm   
+ 	WE	   ./xpm/brick3.xpm   
+ 	EA	   ./xpm/brick4.xpm 
+	S ./xpm/barrel.xpm		
+
+
+
+		C		9 		, 		82  	,   77 
+F77,60,46
+
+  11 1111 
+0102100001
+1002100001
+1000000001
+102N001111
+1000010001
+1010010001
+ 1 11  11 

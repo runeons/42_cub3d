@@ -23,7 +23,7 @@ void	check_map_char(t_scene *s, char c)
 		create_sp(&s->sp[s->spr_nb]);
 		s->spr_nb++;
 	}
-	else if (c != '0' && c != '1' && ft_is_space(c) == 0)
+	else if (c != '0' && c != '1' && c != ' ')
 		exit_err_1(-16);
 }
 
@@ -35,7 +35,7 @@ int		get_clean_width(char *line)
 	x = 0;
 	i = -1;
 	while (line[++i])
-		if (line[i] == 'N' || line[i] == 'S' ||
+		if (line[i] == 'N' || line[i] == 'S' || line[i] == ' ' ||
 				line[i] == 'W' || line[i] == 'E' ||
 				line[i] == '0' || line[i] == '1' || line[i] == '2')
 			x++;
@@ -56,7 +56,6 @@ char	*clean_line(char *line, t_scene *s)
 		exit_err_1(-12);
 	while (line[i])
 	{
-		skip_space(line, &i);
 		check_map_char(s, line[i]);
 		cleaned[j++] = line[i++];
 	}
@@ -73,22 +72,5 @@ int		fill_list(t_scene *s, char *line)
 		s->p->lst = ft_lstnew(line);
 	else
 		ft_lstadd_back(&s->p->lst, ft_lstnew(line));
-	return (OK);
-}
-
-int		parse_list(t_scene *s, char *line, int fd)
-{
-	int	gnl;
-
-	fill_list(s, clean_line(line, s));
-	while ((gnl = get_next_line(fd, &line)) > 0)
-	{
-		fill_list(s, clean_line(line, s));
-		free(line);
-	}
-	if (gnl == 0)
-		free(line);
-	if (gnl == -1)
-		exit_err_1(2);
 	return (OK);
 }
