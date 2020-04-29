@@ -53,20 +53,29 @@ void	draw_world(t_scene *s)
 
 void	draw_img(t_scene *s)
 {
+	draw_world(s);
+	manage_sprites(s);
+	if (s->save == 0)
+		mlx_put_image_to_window(s->mlx->ptr, s->mlx->win->ptr,
+				s->mlx->img->ptr, 0, 0);
+}
+
+void	init_mlx(t_scene *s)
+{
 	int	bpp;
 	int	szl;
 	int	edn;
 
+	if (s->save == 0)
+		if (!(s->mlx->win->ptr = mlx_new_window(s->mlx->ptr, s->mlx->win->x,
+				s->mlx->win->y, "Cub3D")))
+			exit_err_1(-13);
 	if (!(s->mlx->img->ptr = mlx_new_image(s->mlx->ptr,
 			s->mlx->win->x, s->mlx->win->y)))
 		exit_err_1(-13);
 	if (!(s->mlx->img->add = (int *)mlx_get_data_addr(s->mlx->img->ptr,
 			&bpp, &szl, &edn)))
 		exit_err_1(-13);
-	draw_world(s);
-	manage_sprites(s);
-	mlx_put_image_to_window(s->mlx->ptr, s->mlx->win->ptr,
-			s->mlx->img->ptr, 0, 0);
 }
 
 int		main(int ac, char **av)
@@ -81,14 +90,14 @@ int		main(int ac, char **av)
 	if (av[2] && ft_strcmp(av[2], "--save") != 0)
 		exit_err_1(-1);
 	create_scene(&s);
+	if (av[2])
+		s->save = 1;
 	if (!(s->mlx->ptr = mlx_init()))
 		exit_err_1(-13);
 	parsing(s, open(av[1], O_RDONLY));
-	if (!(s->mlx->win->ptr = mlx_new_window(s->mlx->ptr, s->mlx->win->x,
-			s->mlx->win->y, "Cub3D")))
-		exit_err_1(-13);
+	init_mlx(s);
 	init_textures_ptr(s);
-	if (av[2])
+	if (s->save == 1)
 		save_bmp(s);
 	mlx_hook(s->mlx->win->ptr, 02, 1L << 0, key_press, s);
 	mlx_hook(s->mlx->win->ptr, 03, 1L << 1, key_release, s);

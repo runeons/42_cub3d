@@ -20,7 +20,8 @@ int		destroy_notify(t_scene *s)
 	free(s->tex_e->file);
 	free(s->tex_spr->file);
 	mlx_destroy_image(s->mlx->ptr, s->mlx->img->ptr);
-	mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
+	if (s->save == 0)
+		mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
 	exit(EXIT_SUCCESS);
 	return (OK);
 }
@@ -28,16 +29,7 @@ int		destroy_notify(t_scene *s)
 int		key_press(int key, t_scene *s)
 {
 	if (key == ESC)
-	{
-		free(s->tex_n->file);
-		free(s->tex_s->file);
-		free(s->tex_w->file);
-		free(s->tex_e->file);
-		free(s->tex_spr->file);
-		mlx_destroy_image(s->mlx->ptr, s->mlx->img->ptr);
-		mlx_destroy_window(s->mlx->ptr, s->mlx->win->ptr);
-		exit(EXIT_SUCCESS);
-	}
+		destroy_notify(s);
 	if (key == KEY_Q || key == KEY_A)
 		s->key_buf->left = 1;
 	if (key == KEY_D)
@@ -72,6 +64,7 @@ int		key_release(int key, t_scene *s)
 
 int		key_dispatch(t_scene *s)
 {
+	mlx_do_sync(s->mlx->ptr);
 	if (s->key_buf->rotate_left == 1)
 		rotate_left(s);
 	if (s->key_buf->rotate_right == 1)

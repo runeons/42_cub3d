@@ -56,6 +56,7 @@ void	create_bmp(t_bmp **bmp)
 
 void	init_scene(t_scene **s)
 {
+	(*s)->save = 0;
 	(*s)->prp_dst = 0;
 	(*s)->cam = 0;
 	(*s)->hit = 0;

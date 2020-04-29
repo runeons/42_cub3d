@@ -38,11 +38,11 @@
 # define KEY_RIGHT 65363
 
 # ifndef MOVE_SPEED
-#  define MOVE_SPEED 0.11
+#  define MOVE_SPEED 0.14
 # endif
 
 # ifndef ROT_SPEED
-#  define ROT_SPEED 0.11
+#  define ROT_SPEED 0.13
 # endif
 
 # ifndef MOVE_SPRITE
@@ -196,6 +196,7 @@ typedef struct	s_scene{
 	t_bmp		*bmp;
 	t_key		*key_buf;
 	int			*elmts;
+	int			save;
 }				t_scene;
 
 void			init_bmp(t_scene *s);
@@ -224,6 +225,7 @@ int				key_dispatch(t_scene *s);
 void			manage_sprites(t_scene *s);
 void			draw_world(t_scene *s);
 void			draw_img(t_scene *s);
+void			init_mlx(t_scene *s);
 
 int				move_forward(t_scene *s);
 int				move_backward(t_scene *s);

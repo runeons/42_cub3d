@@ -79,5 +79,5 @@ void	save_bmp(t_scene *s)
 		exit_err_1(-2);
 	write_pixel_data(s);
 	close(s->bmp->fd);
-	key_press(ESC, s);
+	destroy_notify(s);
 }
