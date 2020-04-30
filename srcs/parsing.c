@@ -57,8 +57,8 @@ void	parse_res(t_scene *s, char *line, int *i)
 	mlx_get_screen_size(s->mlx->ptr, &x, &y);
 	ft_max(&s->mlx->win->x, x);
 	ft_max(&s->mlx->win->y, y);
-	ft_min(&s->mlx->win->x, 25);
-	ft_min(&s->mlx->win->y, 25);
+	ft_min(&s->mlx->win->x, 26);
+	ft_min(&s->mlx->win->y, 26);
 	increment_elmts(s, 'R');
 }
 
