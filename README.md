@@ -27,5 +27,4 @@ This is a 42 project whose aim it to code a dynamic view inside a maze, inspired
 #### Restrictions
 - Minilibx
 #### Usage
-    make && ./cub3d /maps/first.cub 
-(or any .cub file in the maps folder)
+    make && ./cub3D maps/first.cub
