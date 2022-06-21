@@ -21,6 +21,8 @@ This is a 42 project whose aim it to code a dynamic view inside a maze, inspired
     - S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: texture for sprites
     - C/F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ceiling/floor colors
     - maze map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 0 = empty, 1 = wall, 2 = sprite, N/S/W/E = player initial position
+#### View example
+![](cub3d_recording.gif)
 #### Map example
 ![map_example](https://user-images.githubusercontent.com/49759654/174478312-7be881c6-a219-4891-960e-4c260a8bae4c.jpg)
 
